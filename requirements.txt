@@ -1,0 +1,9 @@
+Flask
+pymongo
+flask-jwt-extended
+python-dotenv
+PyMuPDF
+pytesseract
+Pillow
+flask-cors
+requests
