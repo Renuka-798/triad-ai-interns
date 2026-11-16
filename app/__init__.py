@@ -18,6 +18,10 @@ def create_app():
     # Enable frontend communication
     CORS(app)
 
+    # Register authentication routes
+    from app.routes import auth_bp
+    app.register_blueprint(auth_bp)
+
     # Health check API
     @app.route("/api/health", methods=["GET"])
     def health():

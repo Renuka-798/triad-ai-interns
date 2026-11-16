@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIAD DMS | Upload Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">T</div>
+            <h2>TRIAD <span>DMS</span></h2>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="dashboard.html">Documents</a>
+            <a href="dashboard.html">Advanced Search</a>
+            <a href="dashboard.html">Access Requests</a>
+        </nav>
+
+        <button id="logoutButton" class="logout-button">Logout</button>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div>
+                <h1>Upload Document</h1>
+                <p>Upload a document and provide its metadata.</p>
+            </div>
+        </header>
+
+        <section class="documents-section upload-section">
+            <form id="uploadForm">
+
+                <div class="form-group">
+                    <label for="title">Document Title</label>
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="Enter document title"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="file">Choose Document</label>
+                    <input
+                        type="file"
+                        id="file"
+                        accept=".pdf,.txt,.png,.jpg,.jpeg,.doc,.docx"
+                        required
+                    >
+                </div>
+
+                <div id="dynamicFields">
+                    <p>Loading metadata fields...</p>
+                </div>
+
+                <button type="submit" id="submitUpload">
+                    Upload Document
+                </button>
+
+                <p id="uploadMessage" class="message"></p>
+
+            </form>
+        </section>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/upload.js"></script>
+
+</body>
+</html>

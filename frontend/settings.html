@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings | TRIAD DMS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <h2>TRIAD DMS</h2>
+
+           <nav class="sidebar-nav">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="upload.html">Upload Document</a>
+    <a href="search.html">Advanced Search</a>
+    <a href="requests.html">Access Requests</a>
+    <a href="settings.html" class="active">Admin Settings</a>
+</nav>
+
+            <button id="logoutButton" class="logout-button">Logout</button>
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+                <div>
+                    <h1>Admin Settings</h1>
+                    <p>Manage dynamic document metadata fields</p>
+                </div>
+            </header>
+
+            <section class="request-form-section">
+                <h2 id="formHeading">Add Metadata Field</h2>
+
+                <form id="metadataForm">
+
+                    <label for="fieldName">Field Name</label>
+                    <input
+                        type="text"
+                        id="fieldName"
+                        placeholder="Example: Department"
+                        required
+                    >
+
+                    <label for="fieldType">Field Type</label>
+                    <select id="fieldType" required>
+                        <option value="">Select Field Type</option>
+                        <option value="text">Text</option>
+                        <option value="number">Number</option>
+                        <option value="date">Date</option>
+                        <option value="dropdown">Dropdown</option>
+                    </select>
+
+                    <div id="optionsContainer" style="display:none;">
+                        <label for="fieldOptions">
+                            Dropdown Options (comma separated)
+                        </label>
+                        <input
+                            type="text"
+                            id="fieldOptions"
+                            placeholder="Finance, HR, IT, Marketing"
+                        >
+                    </div>
+
+                    <label>
+                        <input type="checkbox" id="fieldRequired">
+                        Required Field
+                    </label>
+
+                    <button type="submit" id="saveFieldButton">
+                        Save Metadata Field
+                    </button>
+
+                    <button type="button" id="cancelEditButton"
+                            style="display:none;">
+                        Cancel Edit
+                    </button>
+
+                    <p id="formMessage"></p>
+
+                </form>
+            </section>
+
+            <section class="inbox-section">
+                <h2>Configured Metadata Fields</h2>
+                <div id="metadataFieldsContainer">
+                    Loading metadata fields...
+                </div>
+                <p id="fieldsMessage"></p>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/settings.js"></script>
+
+</body>
+</html>

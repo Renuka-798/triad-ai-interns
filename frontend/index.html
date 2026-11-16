@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIAD DMS | Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="login-container">
+
+        <div class="login-left">
+            <div class="brand">
+                <div class="brand-icon">T</div>
+                <h2>TRIAD <span>DMS</span></h2>
+            </div>
+
+            <div class="welcome-content">
+                <h1>Manage your documents.<br>Work smarter.</h1>
+                <p>
+                    A secure document management platform for organizing,
+                    searching, and sharing documents across divisions.
+                </p>
+
+                <div class="feature-list">
+                    <p>✓ Secure document storage</p>
+                    <p>✓ Smart document search</p>
+                    <p>✓ Division-based access control</p>
+                    <p>✓ OCR-powered text extraction</p>
+                </div>
+            </div>
+
+            <p class="left-footer">TRIAD Document Management System</p>
+        </div>
+
+        <div class="login-right">
+            <div class="login-card">
+
+                <h1>Welcome back</h1>
+                <p class="subtitle">Sign in to access your workspace.</p>
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" id="loginButton">
+                        Sign In
+                    </button>
+
+                    <p id="message" class="message"></p>
+
+                </form>
+
+                <p class="signup-text">
+                    Don't have an account?
+                    <a href="signup.html">Create an account</a>
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

@@ -1,27 +1,34 @@
 
 import os
+import certifi
+
 from dotenv import load_dotenv
 from pymongo import MongoClient
 from gridfs import GridFSBucket
 
-load_dotenv()
+# Get the main project directory
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Connect to MongoDB
+# Explicitly load the project's .env file
+# override=True ensures old environment values do not take priority
+load_dotenv(os.path.join(BASE_DIR, ".env"), override=True)
+
 MONGO_URI = os.getenv("MONGO_URI")
 DATABASE_NAME = os.getenv("DATABASE_NAME", "triad_dms")
 
+if not MONGO_URI:
+    raise ValueError("MONGO_URI is missing from .env")
+
 client = MongoClient(
     MONGO_URI,
-    serverSelectionTimeoutMS=5000
+    tlsCAFile=certifi.where(),
+    serverSelectionTimeoutMS=15000
 )
 
-# Select database
 db = client[DATABASE_NAME]
 
-# Initialize GridFS
 fs = GridFSBucket(db)
 
-# Collections
 users_collection = db["users"]
 documents_collection = db["documents"]
 metadata_fields_collection = db["metadata_fields"]

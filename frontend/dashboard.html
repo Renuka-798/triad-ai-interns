@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIAD DMS | Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">T</div>
+            <h2>TRIAD <span>DMS</span></h2>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="documnets.html">Documents</a>
+            <a href="search.html">Advanced Search</a>
+            <a href="requests.html">Access Requests</a>
+            <a href="settings.html">Admin Settings</a>
+        </nav>
+
+        <button id="logoutButton" class="logout-button">Logout</button>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Document Hub</h1>
+                <p>Manage and access your division's documents.</p>
+            </div>
+            <button id="uploadButton" class="upload-button">
+                + Upload Document
+            </button>
+        </header>
+
+        <section class="dashboard-stats">
+            <div class="stat-card">
+                <p>Total Documents</p>
+                <h2 id="totalDocuments">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Division</p>
+                <h2 id="userDivision">Loading...</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Search Results</p>
+                <h2 id="searchResults">0</h2>
+            </div>
+        </section>
+
+    
+        <section class="documents-section" id="documentsSection">
+            <div class="section-heading">
+                <div>
+                    <h2>Recent Documents</h2>
+                    <p>Documents available to your division</p>
+                </div>
+            </div>
+
+            <div id="documentMessage" class="message"></div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Document Name</th>
+                            <th>Division</th>
+                            <th>Created At</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="documentsTable">
+                        <tr>
+                            <td colspan="4">Loading documents...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

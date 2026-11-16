@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIAD DMS | Access Requests</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">T</div>
+            <h2>TRIAD <span>DMS</span></h2>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="upload.html">Upload Document</a>
+            <a href="search.html">Advanced Search</a>
+            <a href="requests.html" class="active">Access Requests</a>
+            <a href="settings.html">Admin Settings</a>
+        </nav>
+
+        <button id="logoutButton" class="logout-button">Logout</button>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Access Requests</h1>
+                <p>Manage document access requests for your division.</p>
+            </div>
+        </header>
+
+        <!-- Submit Access Request -->
+        <section class="documents-section request-form-section">
+            <h2>Request Document Access</h2>
+            <p>Enter the document ID to request access from another division.</p>
+
+            <form id="requestForm">
+                <div class="form-group">
+                    <label for="documentId">Document ID</label>
+                    <input
+                        type="text"
+                        id="documentId"
+                        placeholder="Enter MongoDB document ID"
+                        required
+                    >
+                </div>
+
+                <button type="submit" id="requestButton">
+                    Submit Access Request
+                </button>
+
+                <p id="requestMessage" class="message"></p>
+            </form>
+        </section>
+
+        <!-- Access Requests Inbox -->
+        <section class="documents-section inbox-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Requests Inbox</h2>
+                    <p>Requests received by your division</p>
+                </div>
+
+                <select id="statusFilter">
+                    <option value="">All Requests</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+            </div>
+
+            <p id="inboxMessage" class="message"></p>
+
+            <div id="requestsContainer">
+                Loading requests...
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/requests.js"></script>
+
+</body>
+</html>

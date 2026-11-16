@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents | TRIAD DMS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">T</div>
+            <h2>TRIAD <span>DMS</span></h2>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="documents.html" class="active">Documents</a>
+            <a href="upload.html">Upload Document</a>
+            <a href="search.html">Advanced Search</a>
+            <a href="requests.html">Access Requests</a>
+            <a href="settings.html">Admin Settings</a>
+        </nav>
+
+        <button class="logout-button" id="logoutButton">Logout</button>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Document Hub</h1>
+                <p>View and manage your division's documents</p>
+            </div>
+
+            <button class="upload-button"
+                    onclick="window.location.href='upload.html'">
+                + Upload Document
+            </button>
+        </header>
+
+        <section class="documents-section">
+            <div class="section-heading">
+                <h2>All Documents</h2>
+                <p id="documentCount">Loading documents...</p>
+            </div>
+
+            <div id="documentMessage"></div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Document Name</th>
+                            <th>Division</th>
+                            <th>Uploaded Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="documentsTable">
+                        <tr>
+                            <td colspan="4">Loading documents...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/documents.js"></script>
+
+</body>
+</html>

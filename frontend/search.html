@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIAD DMS | Advanced Search</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">T</div>
+            <h2>TRIAD <span>DMS</span></h2>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="upload.html">Upload Document</a>
+            <a href="search.html" class="active">Advanced Search</a>
+            <a href="requests.html">Access Requests</a>
+            <a href="settings.html">Admin Settings</a>
+        </nav>
+
+        <button id="logoutButton" class="logout-button">Logout</button>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Advanced Search</h1>
+                <p>Find documents using titles, metadata, filenames and extracted text.</p>
+            </div>
+        </header>
+
+        <section class="documents-section">
+
+            <form id="searchForm" class="search-form">
+                <div class="form-group">
+                    <label for="searchQuery">Search Documents</label>
+                    <input
+                        type="search"
+                        id="searchQuery"
+                        placeholder="Search reports, Finance, OCR text..."
+                        required
+                    >
+                </div>
+
+                <button type="submit" id="searchButton">
+                    Search Documents
+                </button>
+            </form>
+
+            <p id="searchMessage" class="message"></p>
+
+            <div class="search-heading">
+                <h2>Search Results</h2>
+                <p id="resultCount">Enter a search term to find documents.</p>
+            </div>
+
+            <div id="searchResultsContainer" class="search-results">
+            </div>
+
+        </section>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/search.js"></script>
+
+</body>
+</html>
